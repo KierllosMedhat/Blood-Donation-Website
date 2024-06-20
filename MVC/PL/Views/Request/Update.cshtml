@@ -1,0 +1,72 @@
+﻿@model RequestDto
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/admin_Layout.cshtml";
+}
+
+<h1>Update</h1>
+
+<div class="row">
+    <div class="col-6">
+        <form asp-action="Update" asp-controller="Request">
+            <div class="form-group">
+                <label asp-for="@Model.Id" class="col-form-label"></label>
+                <input asp-for="@Model.Id" class="form-control" readonly />
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="@Model.PatientId" class="col-form-label"></label>
+                <input asp-for="@Model.PatientId" class="form-control" readonly />
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="@Model.DonorId" class="col-form-label"></label>
+                <input asp-for="@Model.DonorId" class="form-control" readonly />
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="@Model.BloodType" class="col-form-label"></label>
+                <input asp-for="@Model.BloodType" class="form-control" />
+                <span asp-validation-for="@Model.BloodType" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="@Model.NumOfBags" class="col-form-label"></label>
+                <input asp-for="@Model.NumOfBags" class="form-control" />
+                <span asp-validation-for="@Model.NumOfBags" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="@Model.DateTime" class="col-form-label"></label>
+                <input asp-for="@Model.DateTime" class="form-control" />
+                <span asp-validation-for="@Model.DateTime" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="@Model.Governorate" class="col-form-label"></label>
+                <input asp-for="@Model.Governorate" class="form-control" />
+                <span asp-validation-for="@Model.Governorate" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="@Model.Province" class="col-form-label"></label>
+                <input asp-for="@Model.Province" class="form-control" />
+                <span asp-validation-for="@Model.Province" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="@Model.State" class="col-form-label"></label>
+                <input asp-for="@Model.State" class="form-control" />
+                <span asp-validation-for="@Model.State" class="text-danger"></span>
+
+            </div>
+            <br />
+            <input type="submit" value="Update" class="btn btn-success" />
+            <a asp-controller="Admin" asp-action="Requests" class="btn btn-light">Back To List</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Options</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+            padding: 0;
+			background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(photos/cover.jpg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #5A0004;
+	  
+    }
+
+    .registration-container {
+	width: 300px;
+    position: relative;
+	border-radius: 6px;
+         padding: 10px;
+         margin: 0 15px;
+         background-color: rgba(255, 255, 255, 0.8);
+         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    .registration-header {
+      background-color: #5A0004;;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.2em;
+    }
+
+    .registration-option {
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .registration-option:hover {
+      background-color: #f1f1f1;
+    }
+
+    .registration-form {
+      display: none;
+      padding: 20px;
+    }
+
+    input {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      width: calc(100% - 20px);
+      padding: 10px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="registration-container">
+  <div class="registration-header">Registration Options</div>
+  <div class="registration-option" onclick="navigateTo('option1')">Register as Person</div>
+  <div class="registration-option" onclick="navigateTo('option2')">Register as Hospital</div>
+</div>
+
+<script>
+  function navigateTo(page) {
+    switch (page) {
+      case 'option1':
+        window.location.href = 'register-person.html';
+        break;
+      case 'option2':
+        window.location.href = 'register-hospital.html';
+        break;
+      
+      default:
+        break;
+    }
+  }
+</script>
+
+</body>
+</html>

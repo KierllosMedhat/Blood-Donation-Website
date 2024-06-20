@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Request</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(photos/cover.jpg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #5A0004;
+        }
+        
+  .container{
+         position: relative;
+         max-width: 900px;
+         width: 40%;
+         border-radius: 10px;
+         padding: 20px;
+         margin: 0 15px;
+         background-color: rgba(255, 255, 255, 0.8);
+         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+
+     }
+        
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+		.form-gender label{
+	     padding:15px;
+		 width: 100%;
+		 font-weight: bold;
+		}
+		
+		
+			input[type='radio'] {
+			height: 15px;
+			width: 15px;
+			}
+
+        .form-button {
+            text-align: center;
+        }
+
+        .form-button button {
+            padding: 10px 20px;
+            background-color: #7e3135;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+			width:30%;
+        }
+	
+     
+     form button:hover{
+         background-color: #5A0004;
+     }
+
+
+
+        .title{
+    text-align: center;
+    
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="registration-form">
+    <form>
+        <h2 class="title">Blood Request</h2><br>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="Full Name">Full Name:</label>
+                <input type="text" id="Full Name" name="Full Name" placeholder="enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Email">Email:</label>
+                <input type="Email" id="Email" name="Email" placeholder="enter your email"  required>
+            </div>
+
+            
+        </div>
+
+        <div class="form-row">
+             
+
+            <div class="form-group">
+                <label for="password">City:</label>
+                <select id="egypt-cities" name="egypt-cities" onchange="populateProvinces()">
+                    <option value="" disabled selected>Select your city</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Province:</label>
+                <select id="egypt-provinces" name="egypt-provinces">
+                    <option value="" disabled selected>Select your province</option>
+                </select>
+            </div>
+        </div>
+
+        
+		<div class="form-row">
+            <div class="form-group">
+                <label for="Phone Number">Phone Number:</label>
+                <input type="text" id="Phone Number" name="Phone Number" placeholder="enter your phone number"  required>
+            </div>
+
+            <div class="form-group">
+                <label for="Blood Type">Blood Type:</label>
+                <select id="Blood Type" name="Blood Type" required>
+                    <option value="">Select Blood Type</option>
+                     <option>AB+</option>
+                      <option>AB-</option>
+								<option>A+</option>
+                                <option>A-</option>
+								<option>B+</option>
+                                <option>B-</option>
+								<option>O+</option>
+                                <option>O-</option>
+                </select>
+            </div>
+		
+
+            
+        </div>
+		
+		<div class="form-row">
+            <div class="form-gender">
+                <label for="password">Gender:</label>
+				
+		  <label>
+      <input type="radio" name="gender" value="male"> Male
+    </label>
+    <label>
+      <input type="radio" name="gender" value="female"> Female
+    </label>
+    <label>
+      <input type="radio" name="gender" value="other"> Other
+    </label>
+            </div>
+
+            
+            
+        </div>
+
+        <div class="form-button">
+            <button type="submit">Send Request</button>
+        </div>
+
+        
+    </form>
+</div>
+</div>
+<script src="web.js"></script>
+</body>
+</html>

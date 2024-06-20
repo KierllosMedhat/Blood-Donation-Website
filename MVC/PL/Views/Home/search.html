@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+			background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(photos/cover.jpg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #5A0004;
+     
+        }
+
+        .search-container {
+            text-align: center;
+            position: relative;
+         max-width: 900px;
+         width: 50%;
+         border-radius: 10px;
+         padding: 20px;
+         margin: 0 15px;
+         background-color: rgba(255, 255, 255, 0.8);
+         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            max-width: 100px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #7e3135;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-size: 28px;
+        }
+
+        form {
+            display: inline-block;
+            padding: 30px;
+            border-radius: 10px;
+            
+        }
+
+        select {
+            padding: 15px;
+            width: 200px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        input[type="text"] {
+            padding: 15px;
+            width: 200px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            padding: 15px 30px;
+            background-color: #7e3135;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #5A0004;;
+        }
+        button {
+            width: 20%;
+            padding: 10px;
+            background-color: #5A0004; 
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <img class="logo" src="photos/logo.png" alt="Blood Bank Logo">
+        <h1>Search donors by blood type and nearest location</h1>
+        <form action="requests.html" class="form">
+            <select name="blood_type">
+                <option value="" disabled selected>Select Blood Type</option>
+                <option>AB+</option>
+                <option>AB-</option>
+                <option>A+</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>O+</option>
+                <option>O-</option>
+            </select>
+
+            <select id="egypt-cities" name="egypt-cities" onchange="populateProvinces()">
+            <option value="" disabled selected>Select your city</option>
+            </select>
+
+            <select id="egypt-provinces" name="egypt-provinces">
+            <option value="" disabled selected>Select your province</option>
+            </select>
+            <button type="submit">Search</button>
+        </form>
+
+        <script src="web.js"></script>
+
+        
+    </div>
+</body>
+</html>

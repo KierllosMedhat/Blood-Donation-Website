@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Follow up Form</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(photos/cover.jpg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #5A0004;
+        }
+        
+  .container{
+         position: relative;
+         max-width: 900px;
+         width: 40%;
+         border-radius: 10px;
+         padding: 20px;
+         margin: 0 15px;
+         background-color: rgba(255, 255, 255, 0.8);
+         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+
+     }
+        
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group textarea ,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+		
+		
+		
+			input[type='radio'] {
+			height: 15px;
+			width: 15px;
+			}
+
+        .form-button {
+            text-align: center;
+        }
+
+        .form-button button {
+            padding: 10px 20px;
+            background-color: #7e3135;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+			width:30%;
+        }
+	
+     
+     form button:hover{
+         background-color: #5A0004;
+     }
+
+
+
+        .title{
+    text-align: center;
+    font-size: 20px;
+    
+    }
+
+    .option{
+        display: flex;
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="registration-form">
+    <form>
+        <h2 class="title">Please fill out the form below to report your issue. Your input is vital for improving our services.</h2><br>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label >Did you face any problems with the site ? if yes, state them briefly.</label>
+                <div class="option">
+                    <label> <input type="radio" value="Yes" name="option"> Yes</label>
+                    <label><input type="radio"  value="No" name="option"> No</label>
+                </div>
+              <textarea  rows="2" placeholder="enter your problems"></textarea>
+           </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label >Did you face any problems with the communication ? if yes, state them briefly..</label>
+                <div class="option">
+                    <label> <input type="radio" value="Yes" name="option"> Yes</label>
+                    <label><input type="radio"  value="No" name="option"> No</label>
+                </div>
+              <textarea  rows="2" placeholder="enter your problems"></textarea>
+           </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label >Did you face any problems with the donation process? if yes, state them briefly..</label>
+                <div class="option">
+                    <label> <input type="radio" value="Yes" name="option"> Yes</label>
+                    <label><input type="radio"  value="No" name="option"> No</label>
+                </div>
+              <textarea  rows="2" placeholder="enter your problems"></textarea>
+           </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label >Did you face any problems with the patient / donor / hospital? if yes, state them briefly...</label>
+                <div class="option">
+                    <label> <input type="radio" value="Yes" name="option"> Yes</label>
+                    <label><input type="radio"  value="No" name="option"> No</label>
+                </div>
+              <textarea  rows="2" placeholder="enter your problems"></textarea>
+           </div>
+        </div>
+
+        <div class="form-button">
+            <button type="button" onclick="redirectToThanks()">Send</button>
+        </div>
+ 
+    </form>
+</div>
+</div>
+
+<script>
+    function redirectToThanks() {
+        window.location.href = 'Thanks.html';
+    }
+</script>
+</body>
+</html>

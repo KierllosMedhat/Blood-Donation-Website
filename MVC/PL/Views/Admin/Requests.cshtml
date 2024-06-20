@@ -1,0 +1,68 @@
+﻿@model IEnumerable<RequestDto>
+@{
+    ViewData["Title"] = "Requests";
+    Layout = "~/Views/Shared/admin_Layout.cshtml";
+}
+
+<h1>Requests</h1>
+<br />
+
+
+@if (Model?.Count() > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(x => x.Id)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.PatientId)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.DonorId)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.BloodType)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.NumOfBags)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.DateTime)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Governorate)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Province)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.State)</th>
+                <th scope="col">Details</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.PatientId</td>
+                    <td>@item.DonorId</td>
+                    <td>@item.BloodType</td>
+                    <td>@item.NumOfBags</td>
+                    <td>@item.DateTime</td>
+                    <td>@item.Governorate</td>
+                    <td>@item.Province</td>
+                    <td>@item.State</td>
+                    <td>
+                        <a class="btn btn-success" asp-controller="Request" asp-action="Details" asp-route-id="@item.Id">
+                            Details
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" asp-controller="Request" asp-action="Update" asp-route-id="@item.Id">
+                            Update
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" asp-controller="Request" asp-action="Delete" asp-route-id="@item.Id">
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning">
+        <h3>No Requests Found!</h3>
+    </div>
+}
