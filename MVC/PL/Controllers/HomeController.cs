@@ -1,8 +1,8 @@
-﻿using Blood_Donation_Website.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using PL.Models;
 using System.Diagnostics;
 
-namespace Blood_Donation_Website.Controllers
+namespace PL.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\Blood_Donation_Website\\PL.csproj": {}
+    "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\PL\\PL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\BLL\\BLL.csproj": {
+    "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\BLL\\BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\BLL\\BLL.csproj",
+        "projectUniqueName": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\BLL\\BLL.csproj",
         "projectName": "BLL",
-        "projectPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\BLL\\BLL.csproj",
+        "projectPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\BLL\\BLL.csproj",
         "packagesPath": "C:\\Users\\Kierl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\BLL\\obj\\",
+        "outputPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\BLL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Kierl\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,8 +29,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\DAL\\DAL.csproj"
+              "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\DAL\\DAL.csproj"
               }
             }
           }
@@ -85,117 +85,14 @@
         }
       }
     },
-    "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\Blood_Donation_Website\\PL.csproj": {
+    "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\Blood_Donation_Website\\PL.csproj",
-        "projectName": "PL",
-        "projectPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\Blood_Donation_Website\\PL.csproj",
-        "packagesPath": "C:\\Users\\Kierl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\Blood_Donation_Website\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\Kierl\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {
-              "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\BLL\\BLL.csproj": {
-                "projectPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\BLL\\BLL.csproj"
-              },
-              "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\DAL\\DAL.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "dependencies": {
-            "AutoMapper": {
-              "target": "Package",
-              "version": "[13.0.1, )"
-            },
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.29, )"
-            },
-            "Microsoft.AspNetCore.Identity.UI": {
-              "target": "Package",
-              "version": "[6.0.29, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[6.0.29, )"
-            },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
-              "target": "Package",
-              "version": "[6.0.29, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.29, )"
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[6.0.16, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\DAL\\DAL.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\Kierl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\DAL\\obj\\",
+        "outputPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Kierl\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -265,6 +162,109 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\PL\\PL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\PL\\PL.csproj",
+        "projectName": "PL",
+        "projectPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\PL\\PL.csproj",
+        "packagesPath": "C:\\Users\\Kierl\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\PL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Kierl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\BLL\\BLL.csproj": {
+                "projectPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\BLL\\BLL.csproj"
+              },
+              "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\DAL\\DAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.29, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[6.0.29, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.29, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.29, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.29, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

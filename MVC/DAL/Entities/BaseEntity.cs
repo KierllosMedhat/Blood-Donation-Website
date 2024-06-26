@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DAL.Entities
 {
-    [NotMapped]
     public class BaseEntity
     {
         [Key]

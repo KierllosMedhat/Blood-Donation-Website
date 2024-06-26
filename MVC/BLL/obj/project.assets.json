@@ -2244,11 +2244,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\BLL\\BLL.csproj",
+      "projectUniqueName": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\BLL\\BLL.csproj",
       "projectName": "BLL",
-      "projectPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\BLL\\BLL.csproj",
+      "projectPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\BLL\\BLL.csproj",
       "packagesPath": "C:\\Users\\Kierl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\BLL\\obj\\",
+      "outputPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\BLL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Kierl\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2266,8 +2266,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\DAL\\DAL.csproj"
+            "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\DAL\\DAL.csproj"
             }
           }
         }

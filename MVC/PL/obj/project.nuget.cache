@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RbFXznTo1sM=",
+  "dgSpecHash": "fGak9Xzuz4k=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\Blood_Donation_Website\\PL.csproj",
+  "projectFilePath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\PL\\PL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kierl\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Kierl\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

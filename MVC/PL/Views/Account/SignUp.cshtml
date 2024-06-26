@@ -10,6 +10,8 @@
 <body>
     <div class="container">
         <div class="registration-form">
+            @* <div asp-validation-summary="All" class="text-danger"></div> *@
+            @Html.ValidationSummary(true, "", new {@class = "text-danger"})
             <form asp-controller="Account" asp-action="SignUp">
                 <h2 class="title">Sign up as Person</h2><br>
                 <div class="form-row">
@@ -107,7 +109,7 @@
 
                 <input type="submit" value="SignUp" class="btn btn-success" />
                 <div class="login-link">
-                    <p>Already have an account? <a asp-controller="Account" asp-action="Login">Log in</a></p>
+                    <p>Already have an account? <a asp-controller="Account" asp-action="Login">Login</a></p>
                 </div>
             </form>
         </div>

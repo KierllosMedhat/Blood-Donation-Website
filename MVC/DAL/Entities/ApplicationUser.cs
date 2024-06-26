@@ -1,13 +1,14 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DAL.Entities
 {
-    [NotMapped]
     public class ApplicationUser : IdentityUser
     {
-        public string key { get; set; }
+        [Required]
+        //[ForeignKey("Entity")]
         public int EntityId { get; set; }
-        public BaseEntity Entity { get; set; }
+        //public BaseEntity Entity { get; set; }
     }
 }

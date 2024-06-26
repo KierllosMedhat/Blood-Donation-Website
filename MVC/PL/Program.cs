@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using DAL.Entities;
 
-namespace Blood_Donation_Website
+namespace PL
 {
     public class Program
     {
@@ -17,11 +17,12 @@ namespace Blood_Donation_Website
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddRazorPages();
+            //builder.Services.AddRazorPages();
             // Application dbContext
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
-                b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName))); // gets the exact location of the dbcontext file
+                {
+                    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+                });
 
             // Register repositories
             builder.Services.AddScoped<IPatientRepository, PatientRepository>();
@@ -33,12 +34,15 @@ namespace Blood_Donation_Website
 
             builder.Services.AddAutoMapper(typeof(MappingProfile));
 
-            builder.Services.AddIdentityCore<ApplicationUser>(options =>
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
+                {
+                    options.LoginPath = new PathString("/Account/Login");
+                    options.AccessDeniedPath = new PathString("/Home/Error");
+                });
+
+            builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
             {
-                options.Password.RequireDigit = true;
-                options.Password.RequireUppercase = true;
-                options.Password.RequireLowercase = true;
-                options.Password.RequireNonAlphanumeric = true;
                 options.Password.RequiredLength = 6;
                 options.SignIn.RequireConfirmedAccount = false;
                 //options.Lockout.MaxFailedAccessAttempts = 5;
@@ -46,12 +50,6 @@ namespace Blood_Donation_Website
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddTokenProvider<DataProtectorTokenProvider<ApplicationUser>>(TokenOptions.DefaultProvider);
             
-            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
-                {
-                    options.LoginPath = new PathString("/Account/Login");
-                    options.AccessDeniedPath = new PathString("/Home/Error");
-                });
 
             var app = builder.Build();
 
@@ -76,8 +74,6 @@ namespace Blood_Donation_Website
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Account}/{action=SignUp}/{id?}");
-
-            app.MapRazorPages();
 
             app.Run();
         }

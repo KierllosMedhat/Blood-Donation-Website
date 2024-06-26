@@ -1,0 +1,35 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Login</h1>
+
+
+<div class="login-container">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="login-form">
+        <form asp-action="Login">
+            <input class="text email" type="email" asp-for="@Model.Email" placeholder="Email" required="">
+            <span asp-validation-for="@Model.Email" class="text-danger"></span>
+            <input class="text" type="password" asp-for="@Model.Password" placeholder="Password" required="">
+            <span asp-validation-for="@Model.Password" class="text-danger"></span>
+            <div class="wthree-text">
+                <label class="anim">
+                    <input type="checkbox" asp-for="@Model.RememberMe" class="checkbox">
+                    <span>Remember Me</span>
+                </label>
+                <div class="clear"> </div>
+            </div>
+            <input type="submit" value="Login">
+            <div class="signup-link">
+                <p>Don't have an account? <a asp-controller="Account" asp-action="SignUp">Sign Up</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,4 +1,4 @@
-namespace Blood_Donation_Website.Models
+namespace PL.Models
 {
     public class ErrorViewModel
     {

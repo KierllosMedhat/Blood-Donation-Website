@@ -2224,11 +2224,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\DAL\\DAL.csproj",
+      "projectUniqueName": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\DAL\\DAL.csproj",
+      "projectPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\DAL\\DAL.csproj",
       "packagesPath": "C:\\Users\\Kierl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood Donation Project\\MVC\\DAL\\obj\\",
+      "outputPath": "C:\\Users\\Kierl\\OneDrive\\Desktop\\Blood-Donation-Website\\MVC\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Kierl\\AppData\\Roaming\\NuGet\\NuGet.Config",

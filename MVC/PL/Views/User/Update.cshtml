@@ -1,0 +1,33 @@
+﻿@model ApplicationUser
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/admin_Layout.cshtml";
+}
+
+<h1>Update</h1>
+<br />
+<br />
+
+<div class="row">
+    <div class="col-6">
+        <form asp-action="Update" asp-controller="User">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <input hidden asp-for="Id" />
+
+            <div class="form-group">
+                <label asp-for="@Model.UserName" class="col-form-label"></label>
+                <input asp-for="@Model.UserName" class="form-control" />
+                <span asp-validation-for="@Model.UserName" class="text-danger"></span>
+            </div>
+            <br />
+            <input type="submit" value="Save" class="btn btn-primary" />
+            <a class="btn btn-light" asp-action="Index">Back To List</a>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
