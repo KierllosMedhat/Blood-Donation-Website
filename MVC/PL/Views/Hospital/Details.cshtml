@@ -1,0 +1,78 @@
+﻿﻿@Model DAL.Entities.Hospital
+
+<style>
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    .table th, .table td {
+        padding: 8px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    .table th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    .card {
+        width: 50%;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+    }
+
+    .row {
+        margin-bottom: 10px;
+    }
+
+    .col-sm-3 {
+        font-weight: bold;
+    }
+
+    .col-sm-9 {
+        padding-left: 15px;
+    }
+</style>
+
+<h1>  Hospitals  </h1>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Hospital Information</h5>
+        <dl class="row">
+            <dt class="col-sm-3">Hospital Name:</dt>
+            <dd class="col-sm-9"><@Model.HospitalName</dd>
+
+            <dt class="col-sm-3">Email:</dt>
+            <dd class="col-sm-9">@Model.Email</dd>
+
+            <dt class="col-sm-3">Phone Number:</dt>
+            <dd class="col-sm-9">@Model.PhoneNumber</dd>
+
+            <dt class="col-sm-3">Governorate:</dt>
+            <dd class="col-sm-9">@Model.Governorate</dd>
+
+            <dt class="col-sm-3">Province:</dt>
+            <dd class="col-sm-9">@Model.Province</dd>
+
+            <dt class="col-sm-3">Address:</dt>
+            <dd class="col-sm-9">@Model.Address</dd>
+        </dl>
+    </div>
+</div>
+
+<p>
+    <a class="btn btn-light" asp-controller="Hospital" asp-action="Index">Back To List</a>
+</p>

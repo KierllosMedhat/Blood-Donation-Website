@@ -1,4 +1,5 @@
 ﻿using BLL.Interfaces;
+using DAL.Dtos.HospitalsDTO;
 using DAL.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -96,6 +97,49 @@ namespace PL.Controllers
             return View(input);
         }
 
+
+        [HttpGet]
+        public IActionResult RegisterHospitals()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> RegisterHospitals(HospitalDTO hospitalDTO)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser { UserName = hospitalDTO.HospitalName, Email = hospitalDTO.Email };
+                var result = await userManager.CreateAsync(user, hospitalDTO.Password);
+
+                if (result.Succeeded)
+                {
+                    var hospital = new Hospital
+                    {
+                        HospitalName = hospitalDTO.HospitalName,
+                        Email = hospitalDTO.Email,
+                        PhoneNumber = hospitalDTO.PhoneNumber,
+                        Governorate = hospitalDTO.Governorate,
+                        Province = hospitalDTO.Province,
+                        Address = hospitalDTO.Address,
+                        UserId = user.Id,
+
+                    };
+                    unitOfWork.HospitalRepository.Add(hospital);
+                    unitOfWork.Complete();
+
+                    await signInManager.SignInAsync(user, isPersistent: false);
+                    return RedirectToAction("Index", "Home");
+                }
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+
+            }
+            return View(hospitalDTO);
+        }
+
+
         [HttpGet]
         public IActionResult Login()
         {
@@ -131,5 +175,9 @@ namespace PL.Controllers
             return RedirectToAction("Login");
         }
 
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
     }
 }

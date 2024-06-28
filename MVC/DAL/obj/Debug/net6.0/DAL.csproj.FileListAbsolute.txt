@@ -13,18 +13,3 @@ C:\Users\Kierl\OneDrive\Desktop\Blood Donation Project\MVC\DAL\obj\Debug\net6.0\
 C:\Users\Kierl\OneDrive\Desktop\Blood Donation Project\MVC\DAL\obj\Debug\net6.0\DAL.pdb
 C:\Users\Kierl\OneDrive\Desktop\Blood Donation Project\MVC\DAL\obj\Debug\net6.0\DAL.genruntimeconfig.cache
 C:\Users\Kierl\OneDrive\Desktop\Blood Donation Project\MVC\DAL\obj\Debug\net6.0\ref\DAL.dll
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\DAL\bin\Debug\net6.0\DAL.deps.json
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\DAL\bin\Debug\net6.0\DAL.runtimeconfig.json
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\DAL\bin\Debug\net6.0\DAL.dll
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\DAL\bin\Debug\net6.0\DAL.pdb
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\DAL\obj\Debug\net6.0\DAL.sourcelink.json
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\DAL\obj\Debug\net6.0\DAL.dll
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\DAL\obj\Debug\net6.0\refint\DAL.dll
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\DAL\obj\Debug\net6.0\DAL.pdb
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\DAL\obj\Debug\net6.0\DAL.genruntimeconfig.cache
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\DAL\obj\Debug\net6.0\ref\DAL.dll

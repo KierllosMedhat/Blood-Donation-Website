@@ -12,5 +12,6 @@ namespace BLL.Interfaces
         IEnumerable<Donor> GetByBloodType(BloodType bloodType);
         IEnumerable<Donor> GetByGovernorate(string governorate);
         IEnumerable<Donor> GetByProvince(string governorate, string province);
+        Donor GetByUserId(string id);
     }
 }

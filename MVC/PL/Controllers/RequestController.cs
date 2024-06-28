@@ -2,10 +2,13 @@
 using BLL.Interfaces;
 using DAL.Dtos;
 using DAL.Entities;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace PL.Controllers
 {
+    [Authorize(Roles = "User, Patient, Donor")]
     public class RequestController : Controller
     {
         private readonly IUnitOfWork unitOfWork;
@@ -20,6 +23,18 @@ namespace PL.Controllers
             this.logger = logger;
             this.mapper = mapper;
         }
+
+        //public IActionResult DonorIndex(int id)
+        //{
+        //    var result = unitOfWork.RequestRepository.GetRequestByDonorId(id);
+        //    return View(result);
+        //}
+
+        //public IActionResult PatientIndex(int id)
+        //{
+        //    var result = unitOfWork.RequestRepository.GetRequestByPatientId(id);
+        //    return View(result);
+        //}
 
         [HttpGet]
         public IActionResult Details(int? id)

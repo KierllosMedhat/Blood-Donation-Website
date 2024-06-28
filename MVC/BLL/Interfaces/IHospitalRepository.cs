@@ -9,5 +9,10 @@ namespace BLL.Interfaces
 {
     public interface IHospitalRepository : IGenericRepository<Hospital>
     {
+        Task<IEnumerable<Hospital>> GetAllHospitalsAsync();
+        Task<Hospital> GetHospitalByIdAsync(int id);
+        Task<Hospital> GetHospitalByNameAsync(string name);
+        Task DeleteHospitalAsync(int id);
+        Task<Hospital> GetHospitalDetailsAsync(int id);
     }
 }

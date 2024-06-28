@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using PL.Models;
 using System.Reflection.Metadata;
 
 namespace DAL
@@ -54,5 +55,6 @@ namespace DAL
         public DbSet<Hospital> Hospitals { get; set; }
         public DbSet<Request> Requests { get; set; }
         public DbSet<FollowUpForm> FollowUpForms { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
     }
 }

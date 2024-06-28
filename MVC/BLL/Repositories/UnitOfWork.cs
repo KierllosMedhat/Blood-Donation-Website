@@ -17,6 +17,7 @@ namespace BLL.Repositories
         public IHospitalRepository HospitalRepository { get; set; }
         public IRequestRepository RequestRepository { get; set; }
         public IFollowUpFormRepository FollowUpFormRepository { get; set; }
+        public INotificationRepository NotificationRepository { get; set; }
 
         public UnitOfWork(ApplicationDbContext context)
         {
@@ -26,6 +27,7 @@ namespace BLL.Repositories
             HospitalRepository = new HospitalRepository(context);
             RequestRepository = new RequestRepository(context);
             FollowUpFormRepository = new FollowUpFormRepository(context);
+            NotificationRepository = new NotificationRepository(context);
         }
 
         public int Complete()

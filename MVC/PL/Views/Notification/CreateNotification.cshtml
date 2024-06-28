@@ -1,0 +1,15 @@
+﻿﻿@model Notification
+
+<h2>Create Notification</h2>
+
+<form asp-action="CreateNotification" method="post">
+    <div>
+        <label for="message">Message:</label>
+        <input type="text" id="message" name="message" />
+    </div>
+    <div>
+        <label for="userId">User ID:</label>
+        <input type="text" id="userId" name="userId" />
+    </div>
+    <button type="submit">Create</button>
+</form>

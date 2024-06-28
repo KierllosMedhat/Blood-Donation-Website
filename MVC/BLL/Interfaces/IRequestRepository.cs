@@ -11,9 +11,20 @@ namespace BLL.Interfaces
     {
         IEnumerable<Request> GetRequestByBloodType(BloodType bloodType);
         IEnumerable<Request> GetRequestByLocation(string governorate, string province);
-
+        
+        IEnumerable<Request> GetRequestByDonorId(int donor);
+        IEnumerable<Request> GetRequestByPatientId(int patient);
+        
         void AcceptRequest(Request request);
         void RefuseRequest(Request request);
+
+
+        Request? GetRequestById(int requestId);
+        IEnumerable<Request> GetRequestsForDonor(int donorId);
+        void AddRequest(Request request);
+        void RemoveRequest(int requestId);
+        void SaveChanges();
+
 
     }
 }

@@ -13,6 +13,7 @@ namespace BLL.Interfaces
         public IHospitalRepository HospitalRepository { get; set; }
         public IRequestRepository RequestRepository { get; set; }
         public IFollowUpFormRepository FollowUpFormRepository { get; set; }
+        public INotificationRepository NotificationRepository { get; set; }
         public int Complete();
     }
 }

@@ -23,5 +23,8 @@ namespace BLL.Repositories
 
         public IEnumerable<Donor> GetByProvince(string governorate, string province)
             => context.Donors.Where(donor => donor.Governorate == governorate && donor.Province == province);
+
+        public Donor GetByUserId(string id)
+            => context.Donors.Where(donor => donor.UserId == id).FirstOrDefault();
     }
 }

@@ -1,0 +1,39 @@
+﻿﻿@Model IEnumerable<DAL.Dtos.HospitalsDTO.GetHospitalDTO>
+
+@{
+    ViewData["Title"] = "Hospital List";
+}
+
+<div class="container">
+    <h2>Hospital List</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Hospital Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Governorate</th>
+                <th>Province</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var hospital in Model)
+            {
+                <tr>
+                    <td>@hospital.HospitalName</td>
+                    <td>@hospital.Email</td>
+                    <td>@hospital.PhoneNumber</td>
+                    <td>@hospital.Governorate</td>
+                    <td>@hospital.Province</td>
+                    <td>@hospital.Address</td>
+                    <td>
+                        <a asp-controller="Hospital" asp-action="Details" asp-route-id="@hospital.Id" class="btn btn-info btn-sm">Details</a>
+                        <a asp-controller="Hospital" asp-action="Delete" asp-route-id="@hospital.Id" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

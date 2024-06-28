@@ -1,0 +1,59 @@
+﻿@﻿model SignIn
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Login</h1>
+
+<body class="bg-light">
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="card bg-light border-danger">
+                    <div class="card-header bg-danger text-white text-center">
+                        <h4>Login to Blood Donation Center</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="loginForm" asp-action="Login" method="post" class="needs-validation" novalidate>
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                            <div class="form-group">
+                                <label for="UserName">Username</label>
+                                <input type="text" id="UserName" name="UserName" class="form-control" placeholder="Enter username" required>
+                                <span asp-validation-for="@Model.UserName" class="text-danger"></span>
+                                <div class="invalid-feedback">
+                                    Please enter your username.
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Password">Password</label>
+                                <input type="password" id="Password" name="Password" class="form-control" placeholder="Enter password" required>
+                                <span asp-validation-for="@Model.Password" class="text-danger"></span>
+                                <div class="invalid-feedback">
+                                    Please enter your password.
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-danger btn-block">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#loginForm').submit(function (event) {
+                if (!$(this)[0].checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                $(this).addClass('was-validated');
+            });
+        });
+    </script>
+</body>
+</html>

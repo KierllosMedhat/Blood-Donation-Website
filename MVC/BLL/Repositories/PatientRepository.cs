@@ -17,5 +17,7 @@ namespace BLL.Repositories
         {
         }
 
+        public Patient GetByUserId(string id)
+            => context.Patients.Where(patient => patient.UserId == id).FirstOrDefault();
     }
 }

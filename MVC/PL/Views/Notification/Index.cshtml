@@ -1,0 +1,18 @@
+﻿﻿@model IEnumerable<Notification>
+
+<h2>Notifications</h2>
+<ul>
+    @foreach (var notification in Model)
+    {
+        <li>
+            @notification.Message - @notification.DateCreated
+            @if (!notification.IsRead)
+            {
+                <form asp-action="MarkAsRead" method="post" style="display:inline;">
+                    <input type="hidden" name="notificationId" value="@notification.Id" />
+                    <button type="submit">Mark as Read</button>
+                </form>
+            }
+        </li>
+    }
+</ul>

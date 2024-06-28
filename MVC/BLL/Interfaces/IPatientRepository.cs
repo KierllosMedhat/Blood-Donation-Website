@@ -9,6 +9,7 @@ namespace BLL.Interfaces
 {
     public interface IPatientRepository : IGenericRepository<Patient>
     {
+        Patient GetByUserId(string id);
         //Patient GetById(int? id);
         //IEnumerable<Patient patient> GetAll();
         //void Add(Patient patient);

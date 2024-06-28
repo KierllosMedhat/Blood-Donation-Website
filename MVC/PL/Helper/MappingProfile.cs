@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DAL.Dtos;
+using DAL.Dtos.HospitalsDTO;
 using DAL.Entities;
 
 namespace PL.Helper
@@ -12,6 +13,7 @@ namespace PL.Helper
             CreateMap<PatientDto, Patient>().ReverseMap();
             CreateMap<RequestDto, Request>().ReverseMap();
             CreateMap<FollowUpFormDto, FollowUpForm>().ReverseMap();
+            CreateMap<Hospital, GetHospitalDTO>();
         }
     }
 }
