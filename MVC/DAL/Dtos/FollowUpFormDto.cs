@@ -30,8 +30,5 @@ namespace DAL.Dtos
         public string Question4 { get; set; }
         [Required]
         public string Feedback { get; set; }
-        [Required]
-        [Range(0, 5)]
-        public int Rating { get; set; }
     }
 }

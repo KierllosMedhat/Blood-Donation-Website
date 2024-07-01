@@ -8,20 +8,28 @@
 
 <form asp-action="Create" method="post">
     <div class="form-group">
-        <label for="Question1">Question 1</label>
-        <textarea class="form-control" id="Question1" name="Question1"></textarea>
+        <label asp-for="@Model.RequestId">Request Id</label>
+        <textarea class="form-control" asp-for="@Model.RequestId" name="Question1"></textarea>
     </div>
     <div class="form-group">
-        <label for="Question2">Question 2</label>
-        <textarea class="form-control" id="Question2" name="Question2"></textarea>
+        <label asp-for="Question1">Question 1</label>
+        <textarea class="form-control" asp-for="@Model.Question1" name="Question1"></textarea>
     </div>
     <div class="form-group">
-        <label for="Question3">Question 3</label>
-        <textarea class="form-control" id="Question3" name="Question3"></textarea>
+        <label asp-for="Question2">Question 2</label>
+        <textarea class="form-control" asp-for="@Model.Question2" name="Question2"></textarea>
     </div>
     <div class="form-group">
-        <label for="Question4">Question 4</label>
-        <textarea class="form-control" id="Question4" name="Question4"></textarea>
+        <label asp-for="Question3">Question 3</label>
+        <textarea class="form-control" asp-for="@Model.Question3" name="Question3"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="Question4">Question 4</label>
+        <textarea class="form-control" asp-for="@Model.Question4" name="Question4"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="Feedback">Feedback</label>
+        <textarea class="form-control" asp-for="@Model.Feedback" name="Question4"></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

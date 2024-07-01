@@ -43,6 +43,7 @@ namespace PL.Controllers
                     PhoneNumber = input.PhoneNumber,
                     
                 };
+                var result = await userManager.CreateAsync(user, input.Password);
 
                 if (input.Role == "donor")
                 {
@@ -62,6 +63,7 @@ namespace PL.Controllers
                     };
                     unitOfWork.DonorRepository.Add(donor);
                     user.EntityId = donor.Id;
+                    await userManager.AddToRoleAsync(user, "Donor");
                 }
                 else if (input.Role == "patient")
                 {
@@ -80,9 +82,9 @@ namespace PL.Controllers
                     };
                     unitOfWork.PatientRepository.Add(patient);
                     user.EntityId = patient.Id;
+                    await userManager.AddToRoleAsync(user, "Patient");
                 }
 
-                var result = await userManager.CreateAsync(user, input.Password);
 
                 if (result.Succeeded)
                 {
@@ -109,7 +111,10 @@ namespace PL.Controllers
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = hospitalDTO.HospitalName, Email = hospitalDTO.Email };
+  
                 var result = await userManager.CreateAsync(user, hospitalDTO.Password);
+
+                await userManager.AddToRoleAsync(user, "Hospital");
 
                 if (result.Succeeded)
                 {

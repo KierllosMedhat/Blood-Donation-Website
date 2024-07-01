@@ -1,5 +1,6 @@
 ﻿using BLL.Interfaces;
 using DAL.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace RequestApp.Controllers
@@ -8,16 +9,13 @@ namespace RequestApp.Controllers
     {
         private readonly IFollowUpFormRepository _followUpFormRepository;
         private readonly IUnitOfWork unitOfWork;
+        private readonly UserManager<ApplicationUser> userManager;
 
-        public FollowUpFormsController(IUnitOfWork unitOfWork)
+        public FollowUpFormsController(IUnitOfWork unitOfWork
+            , UserManager<ApplicationUser> userManager)
         {
             this.unitOfWork = unitOfWork;
-        }
-
-        public IActionResult Index()
-        {
-            var forms = unitOfWork.FollowUpFormRepository.GetAll().ToList();
-            return View(forms);
+            this.userManager = userManager;
         }
 
         public IActionResult Create()
@@ -28,6 +26,7 @@ namespace RequestApp.Controllers
         [HttpPost]
         public IActionResult Create(FollowUpForm form)
         {
+            form.UserId = userManager.GetUserId(User);
             if (ModelState.IsValid)
             {
                 _followUpFormRepository.AddForm(form);
@@ -36,26 +35,26 @@ namespace RequestApp.Controllers
             return View(form);
         }
 
-        public IActionResult Edit(int id)
-        {
-            var form = _followUpFormRepository.GetAll().FirstOrDefault(f => f.Id == id);
-            if (form == null)
-            {
-                return NotFound();
-            }
-            return View(form);
-        }
+        //public IActionResult Edit(int id)
+        //{
+        //    var form = _followUpFormRepository.GetAll().FirstOrDefault(f => f.Id == id);
+        //    if (form == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return View(form);
+        //}
 
-        [HttpPost]
-        public IActionResult Edit(FollowUpForm form)
-        {
-            if (ModelState.IsValid)
-            {
-                _followUpFormRepository.UpdateFollowUpForm(form);
-                return RedirectToAction("Index");
-            }
-            return View(form);
-        }
+        //[HttpPost]
+        //public IActionResult Edit(FollowUpForm form)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        _followUpFormRepository.UpdateFollowUpForm(form);
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(form);
+        //}
 
         public IActionResult Delete(int id)
         {

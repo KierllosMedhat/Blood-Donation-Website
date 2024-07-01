@@ -58,12 +58,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVxdWVzdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kierl/OneDrive/Desktop/Blood-Donation-Website/MVC/PL/Views/Announcements/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5ub3VuY2VtZW50c1xDcmVhdGUuY3NodG1s
+[C:/Users/Kierl/OneDrive/Desktop/Blood-Donation-Website/MVC/PL/Views/Announcement/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5ub3VuY2VtZW50XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kierl/OneDrive/Desktop/Blood-Donation-Website/MVC/PL/Views/Announcements/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5ub3VuY2VtZW50c1xJbmRleC5jc2h0bWw=
+[C:/Users/Kierl/OneDrive/Desktop/Blood-Donation-Website/MVC/PL/Views/Announcement/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5ub3VuY2VtZW50XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kierl/OneDrive/Desktop/Blood-Donation-Website/MVC/PL/Views/Announcement/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5ub3VuY2VtZW50XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Kierl/OneDrive/Desktop/Blood-Donation-Website/MVC/PL/Views/Donor/Details.cshtml]
@@ -76,10 +80,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Kierl/OneDrive/Desktop/Blood-Donation-Website/MVC/PL/Views/FollowUpForms/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9sbG93VXBGb3Jtc1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Kierl/OneDrive/Desktop/Blood-Donation-Website/MVC/PL/Views/FollowUpForms/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9sbG93VXBGb3Jtc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Kierl/OneDrive/Desktop/Blood-Donation-Website/MVC/PL/Views/Form/Details.cshtml]
@@ -124,6 +124,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Kierl/OneDrive/Desktop/Blood-Donation-Website/MVC/PL/Views/Patient/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kierl/OneDrive/Desktop/Blood-Donation-Website/MVC/PL/Views/Request/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Kierl/OneDrive/Desktop/Blood-Donation-Website/MVC/PL/Views/Request/Details.cshtml]

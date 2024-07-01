@@ -25,7 +25,6 @@
                 <th scope="col">@Html.DisplayNameFor(x => x.Question3)</th>
                 <th scope="col">@Html.DisplayNameFor(x => x.Question4)</th>
                 <th scope="col">@Html.DisplayNameFor(x => x.Feedback)</th>
-                <th scope="col">@Html.DisplayNameFor(x => x.Rating)</th>
                 <th scope="col">Details</th>
                 <th scope="col">Update</th>
                 <th scope="col">Delete</th>
@@ -45,7 +44,6 @@
                     <td>@item.Question3</td>
                     <td>@item.Question4</td>
                     <td>@item.Feedback</td>
-                    <td>@item.Rating</td>
                     <td>
                         <a class="btn btn-success" asp-controller="Form" asp-action="Details" asp-route-id="@item.Id">
                             Details

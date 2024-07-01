@@ -3,7 +3,9 @@ using BLL.Interfaces;
 using DAL.Dtos;
 using DAL.Entities;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using PL.Models;
 
 namespace PL.Controllers
 {
@@ -37,15 +39,29 @@ namespace PL.Controllers
             return View(result);
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
+
         [HttpPost]
-        public IActionResult Create(Request request)
+        public IActionResult Create(RequestDto input)
         {
             if (ModelState.IsValid)
             {
+                var request = mapper.Map<Request>(input);
+                request.State = RequestState.Proccesing;
                 unitOfWork.RequestRepository.AddRequest(request);
-                return RedirectToAction(nameof(Index));
+                var notification = new Notification{
+                    UserId = unitOfWork.DonorRepository.GetById(request.DonorId).UserId,
+                    DateCreated = DateTime.Now,
+                    IsRead = false,
+                    Message = $"You Have A New Request: {request.Id}"
+                };
+                unitOfWork.NotificationRepository.AddNotification(notification);
+                return RedirectToAction("Index", "Home");
             }
-            return View(request);
+            return View(input);
         }
 
         [HttpGet]

@@ -49,10 +49,7 @@
             <label asp-for="@Model.Feedback" class="col-form-label"></label>
             <input asp-for="@Model.Feedback" class="form-control" readonly />
         </div>
-        <div class="form-group">
-            <label asp-for="@Model.Rating" class="col-form-label"></label>
-            <input asp-for="@Model.Rating" class="form-control" readonly />
-        </div>
+
         <br />
         <a class="btn btn-success" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
         <a class="btn btn-light" asp-controller="Admin" asp-action="Forms">Back To List</a>

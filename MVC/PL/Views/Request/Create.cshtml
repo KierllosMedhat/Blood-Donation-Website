@@ -1,7 +1,8 @@
-﻿@model RequestApp.Models.BloodRequest
+﻿@model RequestDto
 
 @{
     ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Create</h1>
@@ -22,14 +23,29 @@
                 <span asp-validation-for="DonorId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DateRequested" class="control-label"></label>
-                <input asp-for="DateRequested" class="form-control" />
-                <span asp-validation-for="DateRequested" class="text-danger"></span>
+                <label asp-for="@Model.BloodType" class="control-label"></label>
+                <input asp-for="@Model.BloodType" class="form-control" />
+                <span asp-validation-for="@Model.BloodType" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <input asp-for="Status" class="form-control" />
-                <span asp-validation-for="Status" class="text-danger"></span>
+                <label asp-for="@Model.NumOfBags" class="control-label"></label>
+                <input asp-for="@Model.NumOfBags" class="form-control" />
+                <span asp-validation-for="@Model.NumOfBags" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.DateTime" class="control-label"></label>
+                <input asp-for="@Model.DateTime" class="form-control" />
+                <span asp-validation-for="@Model.DateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Governorate" class="control-label"></label>
+                <input asp-for="@Model.Governorate" class="form-control" />
+                <span asp-validation-for="@Model.Governorate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Province" class="control-label"></label>
+                <input asp-for="@Model.Province" class="form-control" />
+                <span asp-validation-for="@Model.Province" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -42,6 +58,7 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <partial name="_ValidationScriptsPartial" />
 }

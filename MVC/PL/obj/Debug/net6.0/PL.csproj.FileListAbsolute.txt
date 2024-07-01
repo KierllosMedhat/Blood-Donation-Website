@@ -294,7 +294,6 @@ C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\P
 C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.AssemblyInfoInputs.cache
 C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.AssemblyInfo.cs
 C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.csproj.CoreCompileInputs.cache
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.RazorAssemblyInfo.cache
 C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.RazorAssemblyInfo.cs

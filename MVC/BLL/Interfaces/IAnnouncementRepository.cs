@@ -1,14 +1,20 @@
-﻿using System;
+﻿using BLL.Repositories;
+using DAL.Entities;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace BLL.Interfaces
 {
-    public interface IAnnouncementRepository
+    public interface IAnnouncementRepository : IGenericRepository<Announcement>
     {
-        void AddAnnouncement(Announcement announcement);
-        IEnumerable<Announcement> GetAll();
+      
+        Task<IEnumerable<Announcement>> GetAllAnnouncementsAsync();
+        Task<Announcement> GetAnnouncementByIdAsync(int id);
+        Task UpdateAnnouncementAsync(Announcement announcement);
+        Task DeleteAnnouncementAsync(int id);
     }
 }

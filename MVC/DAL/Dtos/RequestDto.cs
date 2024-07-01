@@ -12,6 +12,7 @@ namespace DAL.Dtos
     public class RequestDto
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]

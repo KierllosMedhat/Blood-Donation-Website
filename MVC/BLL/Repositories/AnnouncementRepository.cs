@@ -1,46 +1,51 @@
 ﻿using BLL.Interfaces;
 using DAL;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using DAL.Entities;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace BLL.Repositories
 {
-    public class AnnouncementRepository : IAnnouncementRepository
+    public class AnnouncementRepository : GenericRepository<Announcement>, IAnnouncementRepository
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ApplicationDbContext context;
 
         public AnnouncementRepository(ApplicationDbContext context)
+            : base(context) 
         {
-            _context = context;
+            this._context = context;
         }
 
-        public void AddAnnouncement(Announcement announcement)
+        public async Task<IEnumerable<Announcement>> GetAllAnnouncementsAsync()
+        {
+            return await _context.Announcements.ToListAsync();
+        }
+        public async Task<Announcement> GetAnnouncementByIdAsync(int id)
+        {
+            return await _context.Announcements.FindAsync(id);
+        }
+
+        public async Task CreateAnnouncementAsync(Announcement announcement)
         {
             _context.Announcements.Add(announcement);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public IEnumerable<Announcement> GetAll()
+        public async Task UpdateAnnouncementAsync(Announcement announcement)
         {
-            return _context.Announcements.ToList();
+            _context.Entry(announcement).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
         }
 
-        public void UpdateAnnouncement(Announcement announcement)
+        public async Task DeleteAnnouncementAsync(int id)
         {
-            _context.Announcements.Update(announcement);
-            _context.SaveChanges();
-        }
-
-        public void DeleteAnnouncement(int id)
-        {
-            var announcement = _context.Announcements.Find(id);
+            var announcement = await _context.Announcements.FindAsync(id);
             if (announcement != null)
             {
                 _context.Announcements.Remove(announcement);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
         }
     }
