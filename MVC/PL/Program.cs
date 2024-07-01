@@ -6,6 +6,7 @@ using PL.Helper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using DAL.Entities;
+using BLL.Services;
 
 namespace PL
 {
@@ -30,6 +31,10 @@ namespace PL
             builder.Services.AddScoped<IHospitalRepository, HospitalRepository>();
             builder.Services.AddScoped<IRequestRepository, RequestRepository>();
             builder.Services.AddScoped<IFollowUpFormRepository, FollowUpFormRepository>();
+            builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
+            builder.Services.AddScoped<INotificationService, NotificationService>();
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IAnnouncementRepository, AnnouncementRepository>();
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             builder.Services.AddAutoMapper(typeof(MappingProfile));
@@ -73,7 +78,7 @@ namespace PL
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Account}/{action=SignUp}/{id?}");
+                pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
         }

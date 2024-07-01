@@ -9,7 +9,7 @@ namespace BLL.Interfaces
 {
     public interface INotificationRepository
     {
-        IEnumerable<Notification> GetNotificationsForUser(int userId);
+        IEnumerable<Notification> GetNotificationsForUser(string userId);
         void AddNotification(Notification notification);
         void MarkAsRead(int notificationId);
     }

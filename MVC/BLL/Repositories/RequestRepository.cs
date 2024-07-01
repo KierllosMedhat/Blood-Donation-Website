@@ -15,6 +15,7 @@ namespace BLL.Repositories
 
         public RequestRepository(ApplicationDbContext context) : base(context)
         {
+            this.context = context;
         }
 
 

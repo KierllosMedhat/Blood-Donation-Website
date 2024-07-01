@@ -14,6 +14,7 @@ namespace BLL.Interfaces
         public IRequestRepository RequestRepository { get; set; }
         public IFollowUpFormRepository FollowUpFormRepository { get; set; }
         public INotificationRepository NotificationRepository { get; set; }
+        public IAnnouncementRepository AnnouncementRepository { get; set; }
         public int Complete();
     }
 }

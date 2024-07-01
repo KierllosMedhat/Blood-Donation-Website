@@ -22,7 +22,7 @@ namespace PL.Controllers
         }
 
         [HttpGet]
-        public IActionResult Details(int? id)
+        public IActionResult Details(int id)
         {
             try
             {
@@ -45,7 +45,7 @@ namespace PL.Controllers
             }
         }
 
-        public IActionResult Delete(int? id)
+        public IActionResult Delete(int id)
         {
             if (id == null)
                 return BadRequest();
@@ -55,7 +55,7 @@ namespace PL.Controllers
             if (form == null)
                 return NotFound();
 
-            unitOfWork.FollowUpFormRepository.Delete(form);
+            unitOfWork.FollowUpFormRepository.DeleteFollowUpForm(id);
             unitOfWork.Complete();
 
             return RedirectToAction("Forms", "Admin");

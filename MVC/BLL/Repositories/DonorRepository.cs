@@ -13,7 +13,9 @@ namespace BLL.Repositories
     {
         private readonly ApplicationDbContext context;
 
-        public DonorRepository(ApplicationDbContext context) : base(context) { }
+        public DonorRepository(ApplicationDbContext context) : base(context) {
+            this.context = context;    
+        }
 
         public IEnumerable<Donor> GetByBloodType(BloodType bloodType)
             => context.Donors.Where(donor => donor.BloodType == bloodType);

@@ -15,6 +15,7 @@ namespace BLL.Repositories
 
         public PatientRepository(ApplicationDbContext context) : base(context)
         {
+            this.context = context;
         }
 
         public Patient GetByUserId(string id)

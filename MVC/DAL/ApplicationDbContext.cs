@@ -56,5 +56,6 @@ namespace DAL
         public DbSet<Request> Requests { get; set; }
         public DbSet<FollowUpForm> FollowUpForms { get; set; }
         public DbSet<Notification> Notifications { get; set; }
+        public DbSet<Announcement> Announcements { get; set; }
     }
 }

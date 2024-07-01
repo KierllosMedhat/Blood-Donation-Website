@@ -8,8 +8,8 @@
 
 
 <body>
-    <div class="registration-container">
-        <div class="registration-form">
+    <div class="formbody">
+        <div class="formcontainer">
             @* <div asp-validation-summary="All" class="text-danger"></div> *@
             @Html.ValidationSummary(true, "", new {@class = "text-danger"})
             <form asp-controller="Account" asp-action="SignUp">

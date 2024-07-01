@@ -18,6 +18,7 @@ namespace BLL.Repositories
         public IRequestRepository RequestRepository { get; set; }
         public IFollowUpFormRepository FollowUpFormRepository { get; set; }
         public INotificationRepository NotificationRepository { get; set; }
+        public IAnnouncementRepository AnnouncementRepository { get; set; }
 
         public UnitOfWork(ApplicationDbContext context)
         {
@@ -28,6 +29,7 @@ namespace BLL.Repositories
             RequestRepository = new RequestRepository(context);
             FollowUpFormRepository = new FollowUpFormRepository(context);
             NotificationRepository = new NotificationRepository(context);
+            AnnouncementRepository = new AnnouncementRepository(context);
         }
 
         public int Complete()

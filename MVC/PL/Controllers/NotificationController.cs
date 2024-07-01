@@ -1,6 +1,7 @@
 ﻿using BLL.Interfaces;
 using BLL.Services;
 using DAL.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace PL.Controllers
@@ -12,24 +13,27 @@ namespace PL.Controllers
     private readonly IUserRepository _userRepository;
     private readonly IRequestRepository _requestRepository;
         private readonly IUnitOfWork unitOfWork;
+        private readonly UserManager<ApplicationUser> userManager;
 
         public NotificationController(INotificationRepository notificationRepository,
                                   INotificationService notificationService,
                                   IUserRepository userRepository,
                                   IRequestRepository requestRepository,
-                                  IUnitOfWork unitOfWork)
+                                  IUnitOfWork unitOfWork,
+                                  UserManager<ApplicationUser> userManager)
     {
         _notificationRepository = notificationRepository;
         _notificationService = notificationService;
         _userRepository = userRepository;
         _requestRepository = requestRepository;
             this.unitOfWork = unitOfWork;
+            this.userManager = userManager;
         }
 
     [HttpGet]
     public IActionResult Index()
     {
-        var userId = 1; // احصل على معرف المستخدم الحالي (تحتاج لتغيير هذا بناءً على التطبيق الخاص بك)
+        var userId = userManager.GetUserId(User); 
         var notifications = _notificationRepository.GetNotificationsForUser(userId);
         return View(notifications);
     }
@@ -45,7 +49,8 @@ namespace PL.Controllers
     public IActionResult PatientRequest(int patientId, int donorId)
     {
         // إرسال إشعار إلى المتبرع
-        _notificationService.SendNotification("You have a new donation request.", donorId);
+        var userId = unitOfWork.DonorRepository.GetById(donorId).UserId;
+        _notificationService.SendNotification("You have a new donation request.", userId);
 
         // حفظ الطلب في قاعدة البيانات
         var request = new Request
@@ -63,10 +68,13 @@ namespace PL.Controllers
         var request = _requestRepository.GetRequestById(requestId);
         if (request == null) return NotFound();
 
+        var userId = unitOfWork.DonorRepository.GetById(request.PatientId).UserId;
+        
         if (isAccepted)
         {
-            // قبول الطلب
-            _notificationService.SendNotification("Your request has been accepted.", request.PatientId);
+                // قبول الطلب
+
+            _notificationService.SendNotification("Your request has been accepted.",userId);
 
             // كشف معلومات الاتصال
             RevealContactInfo(request.PatientId, request.DonorId);
@@ -80,7 +88,7 @@ namespace PL.Controllers
         else
         {
             // رفض الطلب
-            _notificationService.SendNotification("Your request has been declined.", request.PatientId);
+            _notificationService.SendNotification("Your request has been declined.", userId);
 
             // حذف الطلب
             _requestRepository.RemoveRequest(requestId);
@@ -99,8 +107,10 @@ namespace PL.Controllers
         if (patient != null && donor != null)
         {
             // إرسال المعلومات إلى كل من المريض والمتبرع
-            _notificationService.SendNotification($"Donor contact info: {donor.PhoneNumber}", patientId);
-            _notificationService.SendNotification($"Patient contact info: {patient.PhoneNumber}", donorId);
+            var patientUserId = unitOfWork.PatientRepository.GetById(patientId).UserId;
+            _notificationService.SendNotification($"Donor contact info: {donor.PhoneNumber}", patientUserId);
+            var donorUserId = unitOfWork.PatientRepository.GetById(donorId).UserId;
+            _notificationService.SendNotification($"Patient contact info: {patient.PhoneNumber}", donorUserId);
         }
     }
 

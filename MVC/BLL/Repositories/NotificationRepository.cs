@@ -18,7 +18,7 @@ namespace BLL.Repositories
             _context = context;
         }
 
-        public IEnumerable<Notification> GetNotificationsForUser(int userId)
+        public IEnumerable<Notification> GetNotificationsForUser(string userId)
         {
             return _context.Notifications.Where(n => n.UserId == userId).ToList();
         }

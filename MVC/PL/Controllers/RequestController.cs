@@ -3,7 +3,6 @@ using BLL.Interfaces;
 using DAL.Dtos;
 using DAL.Entities;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace PL.Controllers
@@ -24,17 +23,30 @@ namespace PL.Controllers
             this.mapper = mapper;
         }
 
-        //public IActionResult DonorIndex(int id)
-        //{
-        //    var result = unitOfWork.RequestRepository.GetRequestByDonorId(id);
-        //    return View(result);
-        //}
+        public IActionResult DonorIndex(int id)
+        {
+            var request = unitOfWork.RequestRepository.GetRequestByDonorId(id);
+            var result = mapper.Map<IEnumerable<RequestDto>>(request);
+            return View(result);
+        }
 
-        //public IActionResult PatientIndex(int id)
-        //{
-        //    var result = unitOfWork.RequestRepository.GetRequestByPatientId(id);
-        //    return View(result);
-        //}
+        public IActionResult PatientIndex(int id)
+        {
+            var request = unitOfWork.RequestRepository.GetRequestByPatientId(id);
+            var result = mapper.Map<IEnumerable<RequestDto>>(request);
+            return View(result);
+        }
+
+        [HttpPost]
+        public IActionResult Create(Request request)
+        {
+            if (ModelState.IsValid)
+            {
+                unitOfWork.RequestRepository.AddRequest(request);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(request);
+        }
 
         [HttpGet]
         public IActionResult Details(int? id)

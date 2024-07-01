@@ -17,7 +17,7 @@ namespace BLL.Services
             _notificationRepository = notificationRepository;
         }
 
-        public void SendNotification(string message, int userId)
+        public void SendNotification(string message, string userId)
         {
             var notification = new Notification
             {

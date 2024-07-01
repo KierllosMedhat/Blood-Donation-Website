@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 
 namespace BLL.Interfaces
 {
-    public interface IFollowUpFormRepository : IGenericRepository<FollowUpForm>
+    public interface IFollowUpFormRepository
     {
+        FollowUpForm GetById(int id);
+        void AddForm(FollowUpForm form);
+        IEnumerable<FollowUpForm> GetAll();
+        void UpdateFollowUpForm(FollowUpForm form);
+        void DeleteFollowUpForm(int id);
     }
 }
