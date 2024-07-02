@@ -51,18 +51,17 @@ namespace BLL.Repositories
 
         public Request? GetRequestById(int requestId)
         {
-            return _context.Requests.Find(requestId);
+            return context.Requests.Find(requestId);
         }
 
         public IEnumerable<Request> GetRequestsForDonor(int donorId)
         {
-            return _context.Requests.Where(r => r.DonorId == donorId).ToList();
+            return context.Requests.Where(r => r.DonorId == donorId).ToList();
         }
 
         public void AddRequest(Request request)
         {
-            _context.Requests.Add(request);
-            _context.SaveChanges();
+            context.Requests.Add(request);
         }
 
         public void RemoveRequest(int requestId)
@@ -70,14 +69,14 @@ namespace BLL.Repositories
             var request = _context.Requests.Find(requestId);
             if (request != null)
             {
-                _context.Requests.Remove(request);
-                _context.SaveChanges();
+                context.Requests.Remove(request);
+                context.SaveChanges();
             }
         }
 
         public void SaveChanges()
         {
-            _context.SaveChanges();
+            context.SaveChanges();
         }
     }
 }

@@ -101,12 +101,13 @@ namespace PL.Controllers
 
 
         [HttpGet]
-        public IActionResult RegisterHospitals()
+        public IActionResult RegisterHospital()
         {
             return View();
         }
+
         [HttpPost]
-        public async Task<IActionResult> RegisterHospitals(HospitalDTO hospitalDTO)
+        public async Task<IActionResult> RegisterHospital(HospitalDTO hospitalDTO)
         {
             if (ModelState.IsValid)
             {

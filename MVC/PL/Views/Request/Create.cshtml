@@ -13,19 +13,12 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div class="form-group">
-                <label asp-for="PatientId" class="control-label"></label>
-                <input asp-for="PatientId" class="form-control" />
-                <span asp-validation-for="PatientId" class="text-danger"></span>
+                <label asp-for="DonorId" class="col-form-label"></label>
+                <input asp-for="DonorId" class="form-control" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="DonorId" class="control-label"></label>
-                <input asp-for="DonorId" class="form-control" />
-                <span asp-validation-for="DonorId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="@Model.BloodType" class="control-label"></label>
-                <input asp-for="@Model.BloodType" class="form-control" />
-                <span asp-validation-for="@Model.BloodType" class="text-danger"></span>
+                <label asp-for="BloodType" class="col-form-label"></label>
+                <input asp-for="BloodType" class="form-control" readonly />
             </div>
             <div class="form-group">
                 <label asp-for="@Model.NumOfBags" class="control-label"></label>
@@ -33,19 +26,12 @@
                 <span asp-validation-for="@Model.NumOfBags" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.DateTime" class="control-label"></label>
-                <input asp-for="@Model.DateTime" class="form-control" />
-                <span asp-validation-for="@Model.DateTime" class="text-danger"></span>
+                <label asp-for="Governorate" class="col-form-label"></label>
+                <input asp-for="Governorate" class="form-control" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="@Model.Governorate" class="control-label"></label>
-                <input asp-for="@Model.Governorate" class="form-control" />
-                <span asp-validation-for="@Model.Governorate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="@Model.Province" class="control-label"></label>
-                <input asp-for="@Model.Province" class="form-control" />
-                <span asp-validation-for="@Model.Province" class="text-danger"></span>
+                <label asp-for="Province" class="col-form-label"></label>
+                <input asp-for="Province" class="form-control" readonly />
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

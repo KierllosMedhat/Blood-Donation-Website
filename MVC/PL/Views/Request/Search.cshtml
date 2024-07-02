@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Donor>
+@{
+    ViewData["Title"] = "Donors";
+    Layout = "~/Views/Shared/admin_Layout.cshtml";
+}
+
+<h1>Donors</h1>
+<br />
+
+<form class="my-3" asp-action="Search" asp-controller="Request">
+    <div class="row">
+        <div class="form-group">
+            <label>Blood Type:</label>
+            <select id="SearchValue" name="SearchValue" required>
+                <option value="">Select Blood Type</option>
+                <option value="AB_Positive">AB+</option>
+                <option value="AB_Negative">AB-</option>
+                <option value="A_Positive">A+</option>
+                <option value="A_Negative">A-</option>
+                <option value="B_Positive">B+</option>
+                <option value="B_Negative">B-</option>
+                <option value="O_Positive">O+</option>
+                <option value="O_Negative">O-</option>
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <input type="submit" value="Search" class="btn btnbtn-success btn-block" />
+        </div>
+    </div>
+</form>
+
+@if (Model?.Count() > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(x => x.Id)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.UserName)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.BloodType)</th>
+                <th scope="col">Send Request</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.UserName</td>
+                    <td>@item.BloodType</td>
+                    <td>
+                        <a class="btn btn-warning" asp-controller="Request" asp-action="Create" asp-route-id="@item.Id">
+                            SendRequest
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning">
+        <h3>No Donors Found!</h3>
+    </div>
+}

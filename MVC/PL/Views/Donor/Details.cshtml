@@ -1,4 +1,6 @@
-﻿@model DonorDto
+﻿@using Microsoft.AspNetCore.Identity
+@model DonorDto
+@inject SignInManager<ApplicationUser> signInManager
 @{
     ViewData["Title"] = "Donor Details";
     Layout = "~/Views/Shared/admin_Layout.cshtml";
@@ -46,7 +48,10 @@
             <input asp-for="@Model.Province" class="form-control" readonly />
         </div>
         <br />
-        <a class="btn btn-success" asp-action="Update" asp-route-id="@Model.Id">Update</a>
+        @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+        {
+            <a class="btn btn-success" asp-action="Update" asp-route-id="@Model.Id">Update</a>
+        }
         <a class="btn btn-light" asp-controller="Admin" asp-action="Donors">Back To List</a>
     </div>
 </div>

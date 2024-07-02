@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BLL.Interfaces;
+using BLL.Repositories;
 using DAL.Dtos;
 using DAL.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,8 @@ namespace PL.Controllers
             this.logger = logger;
             this.mapper = mapper;
         }
+
+      
 
         [HttpGet]
         public IActionResult Details(int? id)

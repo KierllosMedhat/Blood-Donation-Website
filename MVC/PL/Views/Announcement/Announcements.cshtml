@@ -1,19 +1,14 @@
-﻿@using Microsoft.AspNetCore.Identity
-@model IEnumerable<DAL.Entities.Announcement>
-@inject SignInManager<ApplicationUser> signInManager
+﻿@model IEnumerable<DAL.Entities.Announcement>
 @{
-    
     ViewData["Title"] = "Announcements";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Announcements</h1>
 
-@if (signInManager.IsSignedIn(User) && User.IsInRole("Hospital"))
-{
-    <p>
-        <a asp-action="Create" class="btn btn-primary">Create New</a>
-    </p>
-}
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
 
 @if (Model.Any())
 {
@@ -25,6 +20,8 @@
                 <th>Content</th>
                 <th>Start Date</th>
                 <th>End Date</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -36,6 +33,14 @@
                     <td>@announcement.Content</td>
                     <td>@announcement.StartDate.ToShortDateString()</td>
                     <td>@announcement.EndDate.ToShortDateString()</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@announcement.Id" class="btn btn-info btn-sm">Edit</a>
+                    </td>
+                    <td>
+                        <form asp-controller="Announcement" asp-action="Delete" asp-route-id="@announcement.Id">
+                            <input class="btn-danger" type="submit" value="Delete" />
+                        </form>
+                    </td>
                 </tr>
             }
         </tbody>

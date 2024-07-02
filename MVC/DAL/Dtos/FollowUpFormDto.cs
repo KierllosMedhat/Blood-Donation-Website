@@ -15,8 +15,7 @@ namespace DAL.Dtos
         [Key]
         public int Id { get; set; }
         public int RequestId { get; set; }
-        public int PatientId { get; set; }
-        public int DonorId { get; set; }
+        public string UserId { get; set; }
         [Required]
         [DataType(DataType.DateTime)]
         public DateTime DateTime { get; set; }

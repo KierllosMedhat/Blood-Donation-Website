@@ -4,6 +4,7 @@ using DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240702015337_announcment")]
+    partial class announcment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,8 +50,8 @@ namespace DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("location")
                         .IsRequired()
@@ -537,11 +539,11 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("DAL.Entities.Announcement", b =>
                 {
-                    b.HasOne("DAL.Entities.Hospital", "Hospital")
+                    b.HasOne("DAL.Entities.ApplicationUser", "HospitalUser")
                         .WithMany()
                         .HasForeignKey("UserId");
 
-                    b.Navigation("Hospital");
+                    b.Navigation("HospitalUser");
                 });
 
             modelBuilder.Entity("DAL.Entities.Donor", b =>

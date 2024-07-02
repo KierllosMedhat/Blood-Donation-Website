@@ -33,16 +33,22 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Information">Information</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Announcement" asp-action="Index">Announcements</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact Us</a>
                         </li>
                         @{
                             if (signInManager.IsSignedIn(User))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Notification" asp-action="Index">Notifications</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Form" asp-action="Index" asp-route-id="@signInManager.UserManager.GetUserId(User)">FollowUp Forms</a>
                                 </li>
                                 if (unitOfWork.DonorRepository.GetByUserId(signInManager.UserManager.GetUserId(User)) != null)
                                 {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Notification" asp-action="Index">Notifications</a>
+                                    </li>
                                     <li class="nav-item">
                                         <a class="nav-link text-dark" asp-area="" asp-controller="Request" asp-action="DonorIndex" asp-route-id="@unitOfWork.DonorRepository.GetByUserId(signInManager.UserManager.GetUserId(User)).Id">Requests</a>
                                     </li>
@@ -50,7 +56,16 @@
                                 else if (unitOfWork.PatientRepository.GetByUserId(signInManager.UserManager.GetUserId(User)) != null)
                                 {
                                     <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Notification" asp-action="Index">Notifications</a>
+                                    </li>
+                                    <li class="nav-item">
                                         <a class="nav-link text-dark" asp-area="" asp-controller="Request" asp-action="PatientIndex" asp-route-id="@unitOfWork.PatientRepository.GetByUserId(signInManager.UserManager.GetUserId(User)).Id">Requests</a>
+                                    </li>
+                                }
+                                else if (unitOfWork.HospitalRepository.GetByUserId(signInManager.UserManager.GetUserId(User)) != null)
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Announcement" asp-action="Announcements" asp-route-id="@unitOfWork.HospitalRepository.GetByUserId(signInManager.UserManager.GetUserId(User)).Id">Manage Announcements</a>
                                     </li>
                                 }
                             }

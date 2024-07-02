@@ -12,6 +12,7 @@ namespace BLL.Interfaces
         FollowUpForm GetById(int id);
         void AddForm(FollowUpForm form);
         IEnumerable<FollowUpForm> GetAll();
+        IEnumerable<FollowUpForm> GetAllById(string id);
         void UpdateFollowUpForm(FollowUpForm form);
         void DeleteFollowUpForm(int id);
     }

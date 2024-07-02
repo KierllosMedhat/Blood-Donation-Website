@@ -47,5 +47,8 @@ namespace BLL.Repositories
 
         public FollowUpForm GetById(int id)
             => _context.FollowUpForms.Find(id);
+
+        public IEnumerable<FollowUpForm> GetAllById(string id)
+            => _context.FollowUpForms.Where(form => form.UserId == id);
     }
 }

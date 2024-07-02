@@ -289,15 +289,6 @@ C:\Users\Kierl\OneDrive\Desktop\Blood Donation Project\MVC\Blood_Donation_Websit
 C:\Users\Kierl\OneDrive\Desktop\Blood Donation Project\MVC\Blood_Donation_Website\obj\Debug\net6.0\PL.pdb
 C:\Users\Kierl\OneDrive\Desktop\Blood Donation Project\MVC\Blood_Donation_Website\obj\Debug\net6.0\PL.genruntimeconfig.cache
 C:\Users\Kierl\OneDrive\Desktop\Blood Donation Project\MVC\Blood_Donation_Website\obj\Debug\net6.0\ref\PL.dll
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.csproj.AssemblyReference.cache
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.AssemblyInfoInputs.cache
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.AssemblyInfo.cs
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.csproj.CoreCompileInputs.cache
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.RazorAssemblyInfo.cache
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.RazorAssemblyInfo.cs
-C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.sourcelink.json
 C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\bin\Debug\net6.0\appsettings.json
 C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\bin\Debug\net6.0\PL.staticwebassets.runtime.json
@@ -563,6 +554,16 @@ C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\bin\Debug\net6.0\B
 C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\bin\Debug\net6.0\DAL.dll
 C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\bin\Debug\net6.0\BLL.pdb
 C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\bin\Debug\net6.0\DAL.pdb
+C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.csproj.AssemblyReference.cache
+C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.AssemblyInfoInputs.cache
+C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.AssemblyInfo.cs
+C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.csproj.CoreCompileInputs.cache
+C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.RazorAssemblyInfo.cache
+C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.RazorAssemblyInfo.cs
+C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\PL.sourcelink.json
 C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\Kierl\OneDrive\Desktop\Blood-Donation-Website\MVC\PL\obj\Debug\net6.0\staticwebassets\msbuild.PL.Microsoft.AspNetCore.StaticWebAssets.props

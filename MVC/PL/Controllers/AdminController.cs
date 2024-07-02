@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BLL.Interfaces;
 using DAL.Dtos;
+using DAL.Dtos.HospitalsDTO;
 using DAL.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -43,6 +44,13 @@ namespace PL.Controllers
         {
             var requests = unitOfWork.RequestRepository.GetAll();
             var data = mapper.Map<IEnumerable<RequestDto>>(requests);
+            return View(data);
+        }
+        
+        public IActionResult Hospitals()
+        {
+            var hospitals = unitOfWork.HospitalRepository.GetAll();
+            var data = mapper.Map<IEnumerable<GetHospitalDTO>>(hospitals);
             return View(data);
         }
 

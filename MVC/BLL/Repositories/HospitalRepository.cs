@@ -37,6 +37,10 @@ namespace BLL.Repositories
             }
         }
 
+        public Hospital GetByUserId(string id)
+            => context.Hospitals.Where(hospital => hospital.UserId == id).FirstOrDefault();
+        
+
         public async Task<Hospital> GetHospitalByIdAsync(int id)
         {
             try

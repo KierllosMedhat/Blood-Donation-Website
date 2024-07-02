@@ -13,6 +13,7 @@ namespace BLL.Interfaces
     {
       
         Task<IEnumerable<Announcement>> GetAllAnnouncementsAsync();
+        IEnumerable<Announcement> GetAllAnnouncementsAsyncById(int id);
         Task<Announcement> GetAnnouncementByIdAsync(int id);
         Task UpdateAnnouncementAsync(Announcement announcement);
         Task DeleteAnnouncementAsync(int id);

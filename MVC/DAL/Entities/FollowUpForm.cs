@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -29,12 +30,16 @@ namespace DAL.Entities
         [DataType(DataType.DateTime)]
         public DateTime DateTime { get; set; }
         [Required]
+        [DisplayName("Did you face any problems with the site? if yes, state them briefly.")]
         public string Question1 { get; set; }
         [Required]
+        [DisplayName("Did you face any problems with the communication ? if yes, state them briefly.")]
         public string Question2 { get; set; }
         [Required]
+        [DisplayName("Did you face any problems with the donation process? if yes, state them briefly.")]
         public string Question3 { get; set; }
         [Required]
+        [DisplayName("Did you face any problems with the Patient / Donor / Hospital ? if yes, state them briefly.")]
         public string Question4 { get; set; }
         [Required]
         public string Feedback { get; set; }

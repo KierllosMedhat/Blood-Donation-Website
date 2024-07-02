@@ -2,6 +2,7 @@
 using BLL.Repositories;
 using DAL.Entities;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ActionConstraints;
 using Microsoft.Extensions.Logging;
@@ -12,10 +13,13 @@ namespace PL.Controllers
     public class AnnouncementController : Controller
     {
         private readonly IUnitOfWork unitOfWork;
+        private readonly UserManager<ApplicationUser> userManager;
 
-        public AnnouncementController(IUnitOfWork unitOfWork)
+        public AnnouncementController(IUnitOfWork unitOfWork, 
+            UserManager<ApplicationUser> userManager)
         {
             this.unitOfWork = unitOfWork;
+            this.userManager = userManager;
         }
 
       
@@ -27,22 +31,21 @@ namespace PL.Controllers
 
         
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        [Authorize]
+        [Authorize(Roles ="Hospital")]
         public async Task<IActionResult> Create(Announcement announcement)
         {
             if (ModelState.IsValid)
             {
-
-                 string currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                string currentUserId = userManager.GetUserId(User);
                 if (string.IsNullOrEmpty(currentUserId))
                 {
                     return BadRequest();
                 }
                 else
-                {
+                {   
+                    announcement.UserId = unitOfWork.HospitalRepository.GetByUserId(currentUserId).Id;
                     unitOfWork.AnnouncementRepository.Add(announcement);
-
+                    unitOfWork.Complete();
                     return RedirectToAction("Index", "Home");
 
                 }
@@ -58,6 +61,14 @@ namespace PL.Controllers
             return View(announcements);
         }
 
+        [HttpGet]
+        [Authorize(Roles ="Hospital")]
+        public IActionResult Announcements(int id)
+        {
+            var announcements = unitOfWork.AnnouncementRepository.GetAllAnnouncementsAsyncById(id);
+            return View(announcements);
+        }
+
         public async Task<IActionResult> Edit(int id)
         {
             var announcement = await unitOfWork.AnnouncementRepository.GetAnnouncementByIdAsync(id);
@@ -69,7 +80,7 @@ namespace PL.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Hospital")]
         public async Task<IActionResult> Edit(int id, Announcement announcement)
         {
             if (id != announcement.Id)
@@ -92,7 +103,8 @@ namespace PL.Controllers
             return View(announcement);
         }
 
-        [HttpGet]
+        [HttpPost]
+        [Authorize(Roles = "Hospital")]
         public async Task<IActionResult> Delete(int? id)
         {
 

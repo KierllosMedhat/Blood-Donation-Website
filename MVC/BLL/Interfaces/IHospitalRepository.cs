@@ -14,5 +14,7 @@ namespace BLL.Interfaces
         Task<Hospital> GetHospitalByNameAsync(string name);
         Task DeleteHospitalAsync(int id);
         Task<Hospital> GetHospitalDetailsAsync(int id);
+        Hospital GetByUserId(string id);
+
     }
 }

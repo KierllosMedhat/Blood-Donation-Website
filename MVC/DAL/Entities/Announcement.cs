@@ -18,9 +18,9 @@ namespace DAL.Entities
        
         public string PhoneNumber { get; set; }
 
-        [ForeignKey("HospitalUser")]
-        public string? UserId { get; set; }
-        public ApplicationUser? HospitalUser { get; set; }
+        [ForeignKey("Hospital")]
+        public int? UserId { get; set; }
+        public Hospital? Hospital { get; set; }
 
 
     }

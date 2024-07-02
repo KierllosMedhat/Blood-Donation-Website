@@ -24,8 +24,8 @@
                 <th scope="col">@Html.DisplayNameFor(x => x.Province)</th>
                 <th scope="col">@Html.DisplayNameFor(x => x.State)</th>
                 <th scope="col">Details</th>
-                <th scope="col">Update</th>
-                <th scope="col">Delete</th>
+                <th scope="col">Accept</th>
+                <th scope="col">Refuse</th>
             </tr>
         </thead>
         <tbody>
@@ -47,10 +47,16 @@
                         </a>
                     </td>
                     <td>
-                        <a class="btn btn-warning" asp-controller="Request" asp-action="Delete" asp-route-id="@item.Id">
-                            Delete
-                        </a>
+                        <form class="btn btn-success" asp-controller="Request" asp-action="Accept" asp-route-id="@item.Id">
+                            <input type="submit" value="Accept"/>
+                        </form>
                     </td>
+                    <td>
+                        <form class="btn btn-success" asp-controller="Request" asp-action="Refuse" asp-route-id="@item.Id">
+                            <input type="submit" value="Refuse"/>
+                        </form>
+                    </td>
+                    
                 </tr>
             }
         </tbody>
